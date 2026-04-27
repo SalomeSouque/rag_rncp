@@ -32,7 +32,7 @@ async def on_message(message: cl.Message):
     await msg.send()
     
     try:
-        async for chunk in chain.astream({"question": message.content}):
+        async for chunk in chain.astream(message.content):
             await msg.stream_token(chunk)
     except Exception as e:
         msg.content = f" Erreur lors de la génération : {e}\nVérifie qu'Ollama est bien lancé."
