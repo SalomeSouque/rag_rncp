@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Environnement & secrets
+.env
+
+# Vector stores
+faiss_index/
+chroma_db/
+
+# Data (optionnel si fichier lourd)
+# data/
+
+# Jupyter
+.ipynb_checkpoints/
