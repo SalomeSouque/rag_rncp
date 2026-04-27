@@ -8,15 +8,18 @@ from config import( FAISS_INDEX_PATH, EMBEDDING_MODEL, OLLAMA_MODEL, OLLAMA_OPTI
 from prompt import RNCP_PROMPT
 
 def load_vectorstore():
-    embeddings = OllamaEmbeddings(model=EMBEDDING_MODEL)
-    vectorestore = FAISS.load_local(
-        FAISS_INDEX_PATH,
-        embeddings, 
-        allow_dangerous_deserialization=True
-    )
-    print( "Ok vectorestore loaded")
+    try :
+        embeddings = OllamaEmbeddings(model=EMBEDDING_MODEL)
+        vectorestore = FAISS.load_local(
+            FAISS_INDEX_PATH,
+            embeddings, 
+            allow_dangerous_deserialization=True
+        )
+        print( "Ok vectorestore loaded")
 
-    return vectorestore
+        return vectorestore
+    except Exception as e:
+        raise RuntimeError(f"Index FAISS introuvable. Lance d'abord l'ingestion : uv run python -m ingestion\nErreur : {e}")
 
 
 def build_retriever(vectorstore):
