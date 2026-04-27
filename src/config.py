@@ -12,7 +12,7 @@ PDF_PATH = os.path.join(DATA_DIR, "referentiel_activites_competences _evaluation
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3:4b")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "qwen3-embedding:0.6b")
 OLLAMA_OPTIONS = {"think": False}
-OLLAMA_OPTIONS = {"think": False}
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 
 # FAISS
 FAISS_INDEX_PATH = os.path.join(BASE_DIR, "faiss_index")
