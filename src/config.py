@@ -11,6 +11,8 @@ PDF_PATH = os.path.join(DATA_DIR, "referentiel_activites_competences _evaluation
 # Ollama
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3:4b")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "qwen3-embedding:0.6b")
+OLLAMA_OPTIONS = {"think": False}
+OLLAMA_OPTIONS = {"think": False}
 
 # FAISS
 FAISS_INDEX_PATH = os.path.join(BASE_DIR, "faiss_index")
@@ -21,3 +23,4 @@ CHUNK_OVERLAP = 50
 
 # Params retriever 
 RETRIEVER_K = 4
+
